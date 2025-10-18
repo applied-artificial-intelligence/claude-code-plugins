@@ -1,37 +1,32 @@
 # Example Plugins
 
-This directory contains example plugins to help you learn how to build your own.
-
-## Available Examples
-
-🚧 **Coming Soon**: Example plugins will be added here.
-
-### Planned Examples
-
-**hello-world/**
-- Simplest possible plugin
-- Single command with no dependencies
-- Perfect for understanding plugin basics
-
-**task-tracker/**
-- Simple stateful plugin
-- JSON state management
-- Work unit tracking
-
-**code-formatter/**
-- Tool integration example
-- External tool invocation
-- Error handling patterns
+Three progressive examples demonstrating Claude Code plugin development from basic to advanced.
 
 ## Learning Path
 
-1. **Start with hello-world**: Understand basic plugin structure
-2. **Try task-tracker**: Learn state management
-3. **Explore code-formatter**: See tool integration patterns
-4. **Build your own**: Use templates to create custom plugins
+### 1. hello-world (Beginner - 5 min)
+**Concepts**: Command structure, arguments, basic bash
 
-## What's Next?
+Start here to understand plugin fundamentals.
 
-- [Your First Plugin Tutorial](../docs/getting-started/first-plugin.md)
-- [Plugin Creation Guide](../docs/guides/plugin-creation.md)
-- [Plugin Templates](../templates/)
+[→ Start with hello-world](./hello-world/)
+
+### 2. task-tracker (Intermediate - 15 min)
+**Concepts**: JSON state management, file operations, validation
+
+Build a practical task management system.
+
+[→ Continue with task-tracker](./task-tracker/)
+
+### 3. code-formatter (Advanced - 20 min)
+**Concepts**: External tools, agent integration, error handling
+
+Integrate external formatters with AI-powered analysis.
+
+[→ Finish with code-formatter](./code-formatter/)
+
+---
+
+**Learn** → **Practice** → **Build** → **Contribute**
+
+🚀 Start with `hello-world/` and work your way through!
