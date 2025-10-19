@@ -1,6 +1,6 @@
 ---
 title: handoff
-aliases: [transition, continue]
+aliases: [transition]
 ---
 
 # Conversation Handoff

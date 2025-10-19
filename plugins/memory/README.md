@@ -266,7 +266,7 @@ Create transition documents with context analysis for session continuity.
 - Documents work state and decisions
 - Creates transition summary for next session
 - Preserves token usage and memory state
-- Enables seamless context switching
+- Updates symlink to latest handoff
 
 **Usage**:
 ```bash
@@ -285,6 +285,55 @@ Create transition documents with context analysis for session continuity.
 - ✅ Context approaching 80%+ usage
 - ✅ Before major context switches
 - ✅ Milestone completions
+
+**Next step**: Use `/clear` then `/continue` to resume from this handoff
+
+### `/continue`
+Auto-load and resume from the most recent handoff document with verification.
+
+**What it does**:
+- Finds latest handoff via `.claude/transitions/latest/handoff.md` symlink
+- Verifies symlink points to actual newest handoff (not stale)
+- Loads handoff context automatically
+- Briefs you on session focus, active work, and next steps
+
+**Usage**:
+```bash
+# After /clear, simply:
+/continue                       # Auto-loads latest handoff
+```
+
+**Output Example**:
+```
+📋 Continuing from: .claude/transitions/2025-10-18_005/handoff.md
+
+Session Focus: Plugin v1.0.0 delivery
+Active Work: Completed work unit 009, shipped v1.0.0
+Next Steps: Applied AI website work
+
+Main Takeaways:
+- Plugin architecture refactored to 6 focused plugins
+- Web development plugin fixed and ready
+
+Ready to continue. What would you like to work on?
+```
+
+**When to use**:
+- ✅ After `/clear` to resume work
+- ✅ Starting new session
+- ✅ Returning after break
+
+**Workflow**:
+```bash
+# End session
+/handoff
+
+# Clear conversation
+/clear
+
+# Resume in new session
+/continue
+```
 
 ### `/performance`
 View token usage and performance metrics across all components.
@@ -725,8 +774,8 @@ MIT License - see [LICENSE](../../LICENSE) for details.
 
 ---
 
-**Version**: 1.0.0
+**Version**: 1.1.0
 **Category**: Core
-**Commands**: 3 (memory-review, memory-update, memory-gc)
+**Commands**: 7 (memory-review, memory-update, memory-gc, index, handoff, continue, performance)
 **Dependencies**: None
 **MCP Tools**: Optional (sequential-thinking)

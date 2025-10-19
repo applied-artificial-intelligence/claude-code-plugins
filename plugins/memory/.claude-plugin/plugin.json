@@ -1,9 +1,9 @@
 {
   "name": "claude-code-memory",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Active memory management and maintenance for Claude Code framework",
   "author": "Claude Code Framework",
-  "keywords": ["memory", "maintenance", "context", "management", "index", "handoff", "performance"],
+  "keywords": ["memory", "maintenance", "context", "management", "index", "handoff", "continue", "performance"],
   "commands": ["commands/*.md"],
   "settings": {
     "defaultEnabled": true,
@@ -38,6 +38,10 @@
     "sessionHandoff": {
       "description": "Create transition documents with context analysis for session continuity",
       "command": "handoff"
+    },
+    "sessionContinue": {
+      "description": "Auto-load and resume from latest handoff document with verification",
+      "command": "continue"
     },
     "performanceMetrics": {
       "description": "View token usage and performance metrics across all components",

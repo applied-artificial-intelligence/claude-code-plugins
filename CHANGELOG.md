@@ -5,6 +5,37 @@ All notable changes to Claude Code Plugins will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-10-19
+
+### Added
+
+#### Memory Plugin
+- **`/continue` command** - Auto-load and resume from latest handoff
+  - Automatically finds latest handoff via `.claude/transitions/latest/handoff.md` symlink
+  - Verifies symlink points to actual newest handoff (not stale)
+  - Loads context and briefs user on session focus, active work, next steps
+  - Completes the handoff workflow loop (`/handoff` creates, `/continue` loads)
+
+### Changed
+
+#### Memory Plugin
+- **`/handoff` command** - Removed misleading `continue` alias
+  - Kept `transition` alias
+  - Updated documentation to clarify `/handoff` creates handoffs, doesn't load them
+  - Added reference to new `/continue` command for loading
+- **plugin.json** - Updated capabilities and keywords
+  - Added `sessionContinue` capability for `/continue` command
+  - Added `continue` keyword for discoverability
+- **README.md** - Expanded documentation
+  - Added complete `/continue` command documentation
+  - Added workflow example showing `/handoff` → `/clear` → `/continue` pattern
+  - Updated command count from 6 to 7 commands
+
+### Fixed
+
+- **Misleading alias**: `/handoff` command had `continue` alias that implied auto-continuation when it only creates handoff documents
+- **Manual workflow**: Previously required users to manually type "continue from .claude/transitions/latest/handoff.md" - now automated with `/continue` command
+
 ## [1.0.0] - 2025-10-18
 
 ### 🎉 Major Release: Plugin Reorganization
