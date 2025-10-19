@@ -228,6 +228,105 @@ Apply changes? [y/N]
 - ✅ After pivots or major changes (clean old context)
 - ✅ When Claude references outdated info
 
+### `/index [--update] [--refresh] [focus_area]`
+Create and maintain persistent project understanding through comprehensive project mapping.
+
+**What it does**:
+- Analyzes project structure and architecture
+- Maps dependencies and relationships
+- Identifies key components and patterns
+- Creates searchable project index
+- Updates index as project evolves
+
+**Usage**:
+```bash
+/index                          # Create initial project index
+/index --update                 # Update existing index
+/index --refresh                # Rebuild index from scratch
+/index backend                  # Focus on backend code
+```
+
+**Output**:
+- `.claude/index/` - Project mapping and analysis
+- Architectural overview
+- Component relationships
+- Key patterns and conventions
+
+**When to use**:
+- ✅ New project onboarding
+- ✅ After major refactoring
+- ✅ Before large features (understand context)
+- ✅ Periodic updates (monthly)
+
+### `/handoff`
+Create transition documents with context analysis for session continuity.
+
+**What it does**:
+- Analyzes current session context and progress
+- Documents work state and decisions
+- Creates transition summary for next session
+- Preserves token usage and memory state
+- Enables seamless context switching
+
+**Usage**:
+```bash
+/handoff                        # Create handoff document
+```
+
+**Output**:
+- `.claude/transitions/YYYY-MM-DD_NNN/handoff.md`
+- Session summary and progress
+- Current work state and next steps
+- Context health metrics
+- Recommendations for next session
+
+**When to use**:
+- ✅ End of work session (before closing)
+- ✅ Context approaching 80%+ usage
+- ✅ Before major context switches
+- ✅ Milestone completions
+
+### `/performance`
+View token usage and performance metrics across all components.
+
+**What it does**:
+- Shows real-time token breakdown by component
+- Tracks conversation, MCP, memory, system usage
+- Identifies optimization opportunities
+- Monitors context health (70%, 80%, 90% thresholds)
+- Provides actionable recommendations
+
+**Usage**:
+```bash
+/performance                    # View current metrics
+```
+
+**Output Example**:
+```
+Token Usage Breakdown
+=====================
+Messages (conversation): 45,234 tokens (30%)
+MCP Tools (servers):     18,500 tokens (12%)
+Memory Files (context):   8,100 tokens (5%)
+System (prompt):         12,000 tokens (8%)
+Reserved (buffer):       15,000 tokens (10%)
+Available:               51,166 tokens (35%)
+
+Total: 150,000 / 200,000 (75%)
+Status: ⚠️  Warning - Optimize proactively
+
+Recommendations:
+- Consider /clear after /handoff (free conversation tokens)
+- Disable unused MCP servers (12K tokens)
+- Review memory files for optimization
+```
+
+**When to use**:
+- ✅ Session start (baseline metrics)
+- ✅ Every 10-15 interactions (monitor)
+- ✅ Before major operations (check headroom)
+- ✅ When responses seem degraded
+
 ## Auto-Reflection
 
 The memory plugin integrates with other commands to suggest updates automatically:
@@ -463,10 +562,10 @@ Tests: 87% coverage
 - `/fix applied`: Prompt for lessons_learned
 - `/test coverage`: Update quality metrics
 
-### Core Plugin
-- `/handoff` includes memory review
+### System Plugin
 - `/status` shows memory state
 - `/cleanup` can archive old memory
+- `/audit` validates memory structure
 
 ## Configuration
 

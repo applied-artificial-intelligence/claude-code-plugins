@@ -196,6 +196,65 @@ Deliver completed work with validation and comprehensive documentation.
 - `--pr`: Create GitHub pull request with summary
 - `--deploy`: Include deployment checklist and instructions
 
+### `/work [subcommand] [args]`
+Unified work management - list units, continue work, save checkpoints, and switch contexts.
+
+**What it does**:
+- Lists active, paused, and completed work units
+- Continues work from previous sessions
+- Creates checkpoints for context switching
+- Switches between parallel work streams
+
+**Usage**:
+```bash
+/work                                      # List all work units
+/work continue                             # Resume last active work unit
+/work checkpoint "Switching to bug fix"    # Save checkpoint before context switch
+/work switch 002                           # Switch to work unit 002
+/work active                               # Show only active work units
+/work completed                            # Show completed work units
+```
+
+**When to use**:
+- ✅ Managing multiple parallel work streams
+- ✅ Context switching between tasks
+- ✅ Resuming work after interruptions
+- ✅ Tracking work unit status
+
+### `/spike [topic] [timebox]`
+Time-boxed exploration in isolated branch for investigating uncertain approaches.
+
+**What it does**:
+- Creates isolated git branch for experimentation
+- Time-boxes exploration (default: 2 hours)
+- Documents findings and recommendations
+- Easy to merge or discard results
+
+**Usage**:
+```bash
+/spike "GraphQL vs REST API" 2h            # 2-hour spike
+/spike "Redis caching strategy" 1h         # 1-hour spike
+/spike "New authentication library"        # Default 2-hour spike
+```
+
+**Output**:
+- Isolated git branch (`spike/topic-name`)
+- Findings document with recommendations
+- Code examples (if applicable)
+- Decision: proceed, modify, or abandon
+
+**When to use**:
+- ✅ High uncertainty in approach
+- ✅ Need to compare multiple solutions
+- ✅ Investigating new libraries or patterns
+- ✅ Risk mitigation before committing to design
+
+**Benefits**:
+- Isolated from main work (git branch)
+- Time-boxed to prevent rabbit holes
+- Documented findings for future reference
+- Easy to discard if approach doesn't work
+
 ## Complete Workflow Example
 
 ### Example: Adding User Authentication
@@ -245,10 +304,14 @@ Deliver completed work with validation and comprehensive documentation.
 
 ## Integration with Other Plugins
 
-### Core Plugin
+### System Plugin
 - Uses `/status` to show plan progress
-- Uses `/work` for work unit management
-- Uses `/agent` for specialized exploration
+- Uses `/setup` for project initialization
+- Uses `/audit` for framework compliance
+
+### Agents Plugin
+- Uses `/agent` for specialized exploration and analysis
+- Uses `/serena` for semantic code understanding
 
 ### Development Plugin
 - `/test` runs during /ship validation
@@ -323,7 +386,7 @@ The workflow creates and maintains this structure:
 ## Dependencies
 
 ### Required Plugins
-- **claude-code-core** (^1.0.0): Work unit management, status
+- **claude-code-system** (^1.0.0): System status and configuration
 - **claude-code-memory** (^1.0.0): Memory context loading
 
 ### Optional MCP Tools

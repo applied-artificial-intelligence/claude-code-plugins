@@ -29,12 +29,13 @@ Claude Code Plugins is a **production-ready framework** that adds structured dev
 
 ### What You Get
 
-**5 Core Plugins** (30+ commands):
-- **core** - System commands (status, work, config, cleanup, index, handoff, setup, audit)
-- **workflow** - Development workflow (explore, plan, next, ship)
-- **development** - Code quality (analyze, test, fix, run, review)
+**6 Core Plugins** (30+ commands):
+- **system** - System configuration and health (status, setup, audit, cleanup)
+- **workflow** - Development workflow (explore, plan, next, ship, work, spike)
+- **development** - Code quality (analyze, test, fix, run, review, docs)
+- **agents** - Agent invocation (agent, serena)
 - **git** - Version control operations
-- **memory** - Context management (memory-review, memory-update, memory-gc)
+- **memory** - Knowledge and context (memory-review, memory-update, memory-gc, index, handoff, performance)
 
 **Battle-Tested**: 6+ months of production use building:
 - ML for Trading 3rd Edition book (500+ pages)
@@ -80,9 +81,10 @@ In your project's `.claude/settings.json`:
     }
   },
   "enabledPlugins": {
-    "core@aai-plugins": true,
+    "system@aai-plugins": true,
     "workflow@aai-plugins": true,
     "development@aai-plugins": true,
+    "agents@aai-plugins": true,
     "git@aai-plugins": true,
     "memory@aai-plugins": true
   }
