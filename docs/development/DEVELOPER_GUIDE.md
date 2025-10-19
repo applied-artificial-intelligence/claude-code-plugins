@@ -583,7 +583,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 | `/docs` | core | development |
 
 **Dependency changes**:
-- Replace `claude-code-core` → `claude-code-system` in plugin.json
+- Use `claude-code-system` for system dependencies in plugin.json
 
 **For complete migration details**, see [MIGRATION.md](../../MIGRATION.md).
 

@@ -1,6 +1,6 @@
 # Plugin Patterns
 
-Common patterns for building effective Claude Code plugins. These patterns are proven approaches used in the core plugins and can be adapted to your domain-specific needs.
+Common patterns for building effective Claude Code plugins. These patterns are proven approaches used in the 6 core plugins (system, agents, workflow, development, git, memory) and can be adapted to your domain-specific needs.
 
 ## Table of Contents
 
@@ -42,7 +42,7 @@ echo "Hello, $NAME!"
 ```
 ```
 
-**Real Example**: `/status` from core plugin
+**Real Example**: `/status` from system plugin
 ```markdown
 ---
 name: status

@@ -108,7 +108,7 @@ Add the plugins you want to enable:
     }
   },
   "enabledPlugins": {
-    "core@claude-code-plugins": true,
+    "system@claude-code-plugins": true,
     "workflow@claude-code-plugins": true,
     "development@claude-code-plugins": true,
     "git@claude-code-plugins": true,
@@ -154,7 +154,7 @@ Update your settings to point to the local directory:
     }
   },
   "enabledPlugins": {
-    "core@claude-code-plugins-local": true,
+    "system@claude-code-plugins-local": true,
     "workflow@claude-code-plugins-local": true,
     "development@claude-code-plugins-local": true,
     "git@claude-code-plugins-local": true,
@@ -197,7 +197,7 @@ Create `.claude/settings.json`:
     }
   },
   "enabledPlugins": {
-    "core@claude-code-plugins": true,
+    "system@claude-code-plugins": true,
     "workflow@claude-code-plugins": true
   }
 }
@@ -209,7 +209,7 @@ Create `.claude/settings.json`:
 
 ### Minimal Configuration
 
-Bare minimum to get started (enables all 5 core plugins):
+Bare minimum to get started (enables all 6 core plugins):
 
 ```json
 {
@@ -222,7 +222,8 @@ Bare minimum to get started (enables all 5 core plugins):
     }
   },
   "enabledPlugins": {
-    "core@claude-code-plugins": true,
+    "system@claude-code-plugins": true,
+    "agents@claude-code-plugins": true,
     "workflow@claude-code-plugins": true,
     "development@claude-code-plugins": true,
     "git@claude-code-plugins": true,
@@ -247,7 +248,7 @@ Enable only the plugins you need:
     }
   },
   "enabledPlugins": {
-    "core@claude-code-plugins": true,
+    "system@claude-code-plugins": true,
     "workflow@claude-code-plugins": true
   }
 }
@@ -265,7 +266,7 @@ Enable only the plugins you need:
     }
   },
   "enabledPlugins": {
-    "core@claude-code-plugins": true,
+    "system@claude-code-plugins": true,
     "development@claude-code-plugins": true
   }
 }
@@ -290,14 +291,14 @@ Some plugins accept configuration options:
     }
   },
   "enabledPlugins": {
-    "core@claude-code-plugins": true,
+    "system@claude-code-plugins": true,
     "workflow@claude-code-plugins": true,
     "development@claude-code-plugins": true,
     "git@claude-code-plugins": true,
     "memory@claude-code-plugins": true
   },
   "pluginSettings": {
-    "core@claude-code-plugins": {
+    "system@claude-code-plugins": {
       "performance": {
         "tokenWarningThreshold": 0.8,
         "tokenCriticalThreshold": 0.9
@@ -337,7 +338,7 @@ Use plugins from multiple sources:
     }
   },
   "enabledPlugins": {
-    "core@claude-code-plugins": true,
+    "system@claude-code-plugins": true,
     "workflow@claude-code-plugins": true,
     "my-plugin@my-custom-plugins": true
   }
@@ -508,7 +509,7 @@ If the command runs and creates exploration output, your installation is complet
 1. **Check individual plugin enablement**
    ```json
    "enabledPlugins": {
-     "core@claude-code-plugins": true,
+     "system@claude-code-plugins": true,
      "workflow@claude-code-plugins": true,
      // Make sure all plugins you want are enabled
    }
@@ -586,7 +587,7 @@ Edit your settings.json and remove plugins from `enabledPlugins`:
 ```json
 {
   "enabledPlugins": {
-    "core@claude-code-plugins": true,
+    "system@claude-code-plugins": true,
     // Remove line for plugin you want to disable
   }
 }
