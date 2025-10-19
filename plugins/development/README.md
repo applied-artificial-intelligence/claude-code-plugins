@@ -354,7 +354,7 @@ Code review, documentation quality, and security audit specialist.
 ## Dependencies
 
 ### Required Plugins
-- **claude-code-core** (^1.0.0): Agent invocation, status tracking
+- **claude-code-system** (^1.0.0): System status and configuration
 
 ### Optional MCP Tools
 - **Sequential Thinking**: Enhances architect and code-reviewer structured reasoning
