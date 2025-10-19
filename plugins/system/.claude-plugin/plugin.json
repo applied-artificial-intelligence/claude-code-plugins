@@ -1,0 +1,53 @@
+{
+  "name": "claude-code-system",
+  "version": "1.0.0",
+  "description": "System configuration and health monitoring - setup, status, audit, cleanup",
+  "author": "Claude Code Framework",
+  "keywords": ["system", "configuration", "setup", "status", "audit", "cleanup"],
+  "commands": ["commands/*.md"],
+  "settings": {
+    "defaultEnabled": true,
+    "category": "system"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/applied-artificial-intelligence/claude-code-plugins"
+  },
+  "license": "MIT",
+  "capabilities": {
+    "systemStatus": {
+      "description": "Unified view of work, system, and memory state",
+      "command": "status"
+    },
+    "configuration": {
+      "description": "Manage Claude Code configuration settings",
+      "command": "config"
+    },
+    "projectSetup": {
+      "description": "Initialize Claude Code in new projects",
+      "command": "setup"
+    },
+    "frameworkAudit": {
+      "description": "Validate framework compliance and configuration",
+      "command": "audit"
+    },
+    "cleanup": {
+      "description": "Clean up generated files and temporary data",
+      "command": "cleanup"
+    }
+  },
+  "mcpTools": {
+    "optional": ["sequential-thinking"],
+    "gracefulDegradation": true
+  },
+  "integrations": {
+    "memory": {
+      "description": "Status command integrates with memory system",
+      "files": ["project_state.md", "decisions.md"]
+    },
+    "workUnits": {
+      "description": "Status and audit commands check work unit state",
+      "directory": ".claude/work/current/"
+    }
+  }
+}
