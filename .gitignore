@@ -77,3 +77,4 @@ private/
 secrets/
 *.key
 *.pem
+.notebooklm-sources
