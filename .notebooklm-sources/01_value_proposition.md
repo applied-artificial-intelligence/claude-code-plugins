@@ -314,57 +314,6 @@ plugin-name/
 
 ---
 
-## Services
-
-### Self-Service (Free - Open Source)
-
-✅ 5 core plugins (30+ commands)
-✅ Complete documentation
-✅ Community support (GitHub issues)
-✅ Tutorial content
-
-### Implementation Consulting
-
-**$5K-15K per engagement**
-
-Need help getting your team started?
-
-- Initial setup and configuration
-- Team training workshop (4-8 hours)
-- Custom configuration for your stack
-- 30-day email support
-
-[Schedule Consultation →](https://appliedaiconsulting.com/contact)
-
-### Custom Plugin Development
-
-**$10K-30K per plugin**
-
-Have specialized workflows?
-
-- Discovery workshop
-- Custom plugin design and development
-- Testing and documentation
-- Training and handoff
-
-[Discuss Your Needs →](https://appliedaiconsulting.com/contact)
-
-### Enterprise Support
-
-**$20K-100K/year**
-
-For organizations adopting AI-assisted development at scale:
-
-- Priority support (24-hour response)
-- Quarterly plugin updates
-- Custom feature development
-- Annual training refreshers
-- Architecture consultation
-
-[Enterprise Inquiry →](https://appliedaiconsulting.com/enterprise)
-
----
-
 ## Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
