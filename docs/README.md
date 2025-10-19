@@ -16,7 +16,7 @@ Complete documentation for Claude Code Plugins framework.
 - [Plugin Creation](guides/plugin-creation.md) - Building custom plugins
 
 ### Reference
-- [Commands Reference](reference/commands.md) - All 30+ commands documented
+- [Commands Reference](reference/commands.md) - All 26 commands documented
 - [Agents Reference](reference/agents.md) - Specialized agent capabilities
 - [Configuration](reference/configuration.md) - Settings and customization
 

@@ -1,0 +1,99 @@
+# GitHub Pages Configuration for Claude Code Plugins Documentation
+
+# Site settings
+title: "Claude Code Plugins"
+description: "Production-ready workflow framework for Claude Code - From chaos to system"
+url: "https://applied-artificial-intelligence.github.io"
+baseurl: "/claude-code-plugins"
+
+# Theme
+remote_theme: just-the-docs/just-the-docs@v0.8.2
+color_scheme: dark
+
+# Logo
+logo: "/assets/images/logo.png"
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: true
+
+# Navigation
+nav_sort: case_sensitive
+
+# Footer
+footer_content: "Claude Code Plugins is open source. <a href=\"https://github.com/applied-artificial-intelligence/claude-code-plugins/blob/main/LICENSE\">MIT License</a>"
+
+# External links
+aux_links:
+  "GitHub Repository":
+    - "https://github.com/applied-artificial-intelligence/claude-code-plugins"
+  "Applied AI Website":
+    - "https://applied-ai.com"
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Code highlighting
+highlighter: rouge
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Collections
+collections:
+  plugins:
+    output: true
+    permalink: /plugins/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "getting-started"
+    values:
+      parent: Getting Started
+  - scope:
+      path: "guides"
+    values:
+      parent: Guides
+  - scope:
+      path: "reference"
+    values:
+      parent: Reference
+  - scope:
+      path: "architecture"
+    values:
+      parent: Architecture
+  - scope:
+      path: "development"
+    values:
+      parent: Development
+
+# Plugin settings
+plugins:
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  - jekyll-include-cache
+
+# Exclude from processing
+exclude:
+  - node_modules/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - README.md

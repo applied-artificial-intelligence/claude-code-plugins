@@ -10,7 +10,7 @@
 ## Problem Statement
 
 ### Current Situation
-- **Utility Duplication**: ~44 lines of bash utilities duplicated across 30+ commands
+- **Utility Duplication**: ~44 lines of bash utilities duplicated across 26 commands
 - **Maintenance Burden**: Bug fixes require manual patching in every command file
 - **Consistency Risk**: Easy for utilities to drift across different commands
 - **Developer Friction**: Contributors must copy/paste utilities for new commands
@@ -419,7 +419,7 @@ scripts/extract-utils.sh
 4. Validate injection works correctly
 
 ### Phase 3: Command Migration (TASK-004)
-1. Add `<!-- INJECT_UTILITIES -->` to all 30 commands
+1. Add `<!-- INJECT_UTILITIES -->` to all 26 commands
 2. Remove duplicated utility code below marker
 3. Run `scripts/build.sh`
 4. Verify each command individually
@@ -490,8 +490,8 @@ git checkout HEAD~1 -- plugins/system/commands/problematic.md
 ## Success Metrics
 
 ### Pre-Migration Baseline
-- ⚠️ Utility duplication: ~44 lines × 30 commands = ~1,320 duplicated lines
-- ⚠️ Maintenance: Bug fixes require 30 manual edits
+- ⚠️ Utility duplication: ~44 lines × 26 commands = ~1,144 duplicated lines
+- ⚠️ Maintenance: Bug fixes require 26 manual edits
 - ⚠️ Consistency: Utilities can drift across commands
 - ⚠️ Developer experience: Must copy/paste utilities for new commands
 
