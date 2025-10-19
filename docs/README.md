@@ -25,6 +25,10 @@ Complete documentation for Claude Code Plugins framework.
 - [Framework Patterns](architecture/patterns.md) - Reusable patterns
 - [System Constraints](architecture/constraints.md) - What the framework can/cannot do
 
+### Development
+- [Developer Guide](development/DEVELOPER_GUIDE.md) - **Complete contributor guide** (v1.0.0+)
+- [Build System Design](development/build-system.md) - Preprocessor architecture (future)
+
 ## Documentation Status
 
 🚧 **Under Construction**: Documentation is being actively developed.

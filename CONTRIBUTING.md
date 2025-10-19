@@ -107,23 +107,74 @@ When suggesting a feature:
 - [ ] Branch is up to date with main
 - [ ] No merge conflicts
 
+### Adding Commands to Existing Plugins
+
+Contributing a new command to an existing plugin:
+
+1. **Choose the right plugin**:
+   - **system** - System configuration and health (status, setup, audit, cleanup)
+   - **workflow** - Development workflow (explore, plan, next, ship, work, spike)
+   - **development** - Code quality (analyze, test, fix, run, review, docs)
+   - **agents** - Agent invocation (agent, serena)
+   - **memory** - Knowledge and context (memory-*, index, handoff, performance)
+   - **git** - Version control operations
+
+2. **Create command file**:
+   ```bash
+   # Create command in appropriate plugin
+   touch plugins/workflow/commands/my-command.md
+   ```
+
+3. **Follow command structure** (see `src/utils/README.md` for complete guide):
+   ```markdown
+   ---
+   name: my-command
+   description: Brief description
+   ---
+
+   # Command Implementation
+
+   #!/bin/bash
+   set -euo pipefail
+
+   # Copy required utilities inline (see WHY_DUPLICATION_EXISTS.md)
+   # - Constants (CLAUDE_DIR, WORK_DIR, etc.)
+   # - error_exit(), warn(), debug()
+   # - safe_mkdir(), require_tool()
+
+   # Your command logic here
+   ```
+
+4. **Update plugin.json**:
+   ```json
+   {
+     "capabilities": {
+       "myCapability": {
+         "description": "What your command does",
+         "command": "my-command"
+       }
+     }
+   }
+   ```
+
+5. **Update plugin README**:
+   - Add command to command list
+   - Document usage and examples
+   - Note any dependencies or integrations
+
 ### Creating New Plugins
 
 Want to contribute a new plugin? Great! Here's the process:
 
 1. **Propose the plugin** by opening an issue:
    - Describe what problem it solves
-   - Explain why it belongs in the core framework (vs a separate plugin)
+   - Explain why it needs a new plugin (vs adding to existing plugin)
    - Outline the commands and capabilities
+   - Consider existing plugin categories (system, workflow, development, agents, memory, git)
 
 2. **Wait for approval** before starting development
 
-3. **Use the plugin template**:
-   ```bash
-   cp -r templates/basic-plugin plugins/your-plugin-name
-   ```
-
-4. **Follow plugin structure**:
+3. **Follow plugin structure**:
    ```
    your-plugin/
    ├── .claude-plugin/
@@ -135,17 +186,35 @@ Want to contribute a new plugin? Great! Here's the process:
    └── README.md            # Plugin documentation
    ```
 
+4. **Create plugin.json** (required):
+   ```json
+   {
+     "name": "claude-code-your-plugin",
+     "version": "1.0.0",
+     "description": "Clear, concise description",
+     "capabilities": {
+       "capabilityName": {
+         "description": "What this capability does",
+         "command": "command-name"
+       }
+     },
+     "dependencies": {
+       "claude-code-system": "^1.0.0"
+     }
+   }
+   ```
+
 5. **Test thoroughly**:
    - Test all commands in isolation
-   - Test integration with other plugins
+   - Test integration with other plugins (especially dependencies)
    - Test in multiple projects
    - Document any dependencies or requirements
 
 6. **Document well**:
-   - Clear README with examples
-   - Command reference
-   - Agent capabilities (if any)
+   - Clear README with command reference and examples
+   - Agent capabilities documentation (if any)
    - Configuration options
+   - Integration points with other plugins
    - Known limitations
 
 ### Improving Documentation
