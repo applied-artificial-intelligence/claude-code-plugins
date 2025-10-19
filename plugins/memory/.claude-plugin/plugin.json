@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Active memory management and maintenance for Claude Code framework",
   "author": "Claude Code Framework",
-  "keywords": ["memory", "maintenance", "context", "management"],
+  "keywords": ["memory", "maintenance", "context", "management", "index", "handoff", "performance"],
   "commands": ["commands/*.md"],
   "settings": {
     "defaultEnabled": true,
@@ -30,6 +30,18 @@
     "autoReflection": {
       "description": "Auto-analyze work for memory updates at completion points",
       "integrated": "ship, fix, review commands"
+    },
+    "projectIndexing": {
+      "description": "Create and maintain persistent project understanding through comprehensive mapping",
+      "command": "index"
+    },
+    "sessionHandoff": {
+      "description": "Create transition documents with context analysis for session continuity",
+      "command": "handoff"
+    },
+    "performanceMetrics": {
+      "description": "View token usage and performance metrics across all components",
+      "command": "performance"
     }
   },
   "dependencies": {},

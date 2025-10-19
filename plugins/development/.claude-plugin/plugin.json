@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Code development and quality assurance tools - analyze, test, fix, review",
   "author": "Claude Code Framework",
-  "keywords": ["development", "testing", "quality", "analysis", "debugging"],
+  "keywords": ["development", "testing", "quality", "analysis", "debugging", "documentation"],
   "commands": ["commands/*.md"],
   "agents": ["agents/architect.md", "agents/code-reviewer.md", "agents/test-engineer.md"],
   "settings": {
@@ -50,6 +50,10 @@
     "mlEvaluation": {
       "description": "Compare experiments and identify best performers",
       "command": "evaluate"
+    },
+    "documentationOperations": {
+      "description": "Unified documentation operations - fetch external, search all, generate project docs",
+      "command": "docs"
     }
   },
   "agents": {
@@ -76,7 +80,7 @@
     }
   },
   "dependencies": {
-    "claude-code-core": "^1.0.0"
+    "claude-code-system": "^1.0.0"
   },
   "mcpTools": {
     "optional": ["sequential-thinking", "serena", "context7"],

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Structured development workflow - explore, plan, implement, deliver",
   "author": "Claude Code Framework",
-  "keywords": ["workflow", "explore", "plan", "next", "ship"],
+  "keywords": ["workflow", "explore", "plan", "next", "ship", "work", "spike"],
   "commands": ["commands/*.md"],
   "settings": {
     "defaultEnabled": true,
@@ -30,11 +30,19 @@
     "workDelivery": {
       "description": "Deliver completed work with validation and comprehensive documentation",
       "command": "ship"
+    },
+    "workUnitManagement": {
+      "description": "Manage work units and parallel streams",
+      "command": "work"
+    },
+    "timeboxedExploration": {
+      "description": "Time-boxed exploration in isolated branch",
+      "command": "spike"
     }
   },
   "dependencies": {
-    "claude-code-core": "^1.0.0",
-    "claude-code-memory": "^1.0.0"
+    "claude-code-memory": "^1.0.0",
+    "claude-code-system": "^1.0.0"
   },
   "mcpTools": {
     "optional": ["sequential-thinking", "serena", "firecrawl"],

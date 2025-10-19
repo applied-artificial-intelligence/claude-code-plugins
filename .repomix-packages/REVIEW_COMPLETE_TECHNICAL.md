@@ -1,7 +1,4 @@
 # Claude Code Plugins - Technical Review (Complete)
-
-**Instructions**: Copy this ENTIRE file and paste into Claude/ChatGPT/Gemini. The LLM will analyze the package and provide structured technical feedback.
-
 **Time Required**: 2-3 hours
 **Review Type**: Technical/Architecture review
 
