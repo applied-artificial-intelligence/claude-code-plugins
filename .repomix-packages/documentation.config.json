@@ -1,0 +1,33 @@
+{
+  "$schema": "https://repomix.com/schemas/latest/schema.json",
+  "output": {
+    "filePath": "../.repomix-packages/documentation-package.md",
+    "style": "markdown",
+    "headerText": "# Claude Code Plugins - Complete Documentation Package\n\nThis package contains comprehensive documentation for understanding the entire Claude Code plugin ecosystem.\n\n## What's Included\n- All documentation (getting started, architecture, reference)\n- All 5 production plugins with full READMEs\n- Design principles and patterns\n- Framework constraints and philosophy\n\n## Target Audience\nTechnical reviewers who want deep understanding of the architecture, patterns, and design decisions.\n\n## Time to Review: 2-3 hours",
+    "fileSummary": true,
+    "directoryStructure": true,
+    "removeComments": false,
+    "showLineNumbers": true,
+    "topFilesLength": 10
+  },
+  "include": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "docs/**/*",
+    "plugins/**/README.md",
+    "plugins/**/.claude-plugin/plugin.json",
+    "templates/**/*"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "**/*.test.ts",
+      "**/node_modules/**",
+      "**/.git/**",
+      "scripts/**",
+      ".notebooklm-sources/**",
+      "examples/**"
+    ]
+  }
+}
