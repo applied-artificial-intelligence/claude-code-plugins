@@ -25,17 +25,16 @@ Claude Code Plugins is a **production-ready framework** that adds structured dev
 
 ✅ **MCP Integration**: Proven patterns for Serena, Chrome DevTools, Context7, Sequential Thinking
 
-✅ **Specialized Agents**: 6 expert agents (architect, test-engineer, code-reviewer, auditor, data-scientist, report-generator)
+✅ **Specialized Agents**: 6 expert agents (architect, test-engineer, code-reviewer, auditor, reasoning-specialist, report-generator)
 
 ### What You Get
 
-**6 Core Plugins** (30+ commands):
+**5 Core Plugins**:
 - **system** - System configuration and health (status, setup, audit, cleanup)
 - **workflow** - Development workflow (explore, plan, next, ship, work, spike)
-- **development** - Code quality (analyze, test, fix, run, review, docs)
-- **agents** - Agent invocation (agent, serena)
-- **git** - Version control operations
-- **memory** - Knowledge and context (memory-review, memory-update, memory-gc, index, handoff, performance)
+- **development** - Code quality and operations (analyze, test, fix, docs, git, review)
+- **agents** - Agent invocation and semantic code (agent, serena)
+- **memory** - Knowledge and context (memory-review, memory-update, memory-gc, index, handoff, continue, performance)
 
 **Battle-Tested**: 6+ months of production use building:
 - ML for Trading 3rd Edition book (500+ pages)
@@ -85,7 +84,6 @@ In your project's `.claude/settings.json`:
     "workflow@aai-plugins": true,
     "development@aai-plugins": true,
     "agents@aai-plugins": true,
-    "git@aai-plugins": true,
     "memory@aai-plugins": true
   }
 }
@@ -195,21 +193,18 @@ plugin-name/
 - [Quick Start Tutorial](docs/getting-started/quick-start.md)
 - [Your First Plugin](docs/getting-started/first-plugin.md)
 
-### Guides
-- [Workflow Guide](docs/guides/workflow-guide.md) - Using explore → plan → next → ship
-- [Memory Management](docs/guides/memory-management.md) - Persistent context best practices
-- [MCP Integration](docs/guides/mcp-integration.md) - Leveraging Model Context Protocol
-- [Plugin Creation](docs/guides/plugin-creation.md) - Building custom plugins
-
 ### Reference
-- [Commands Reference](docs/reference/commands.md) - All 30+ commands documented
-- [Agents Reference](docs/reference/agents.md) - Specialized agent capabilities
-- [Configuration](docs/reference/configuration.md) - Settings and customization
+- [Commands Reference](docs/reference/commands.md) - All commands documented
+- [Plugin READMEs](plugins/) - Detailed documentation for each plugin
 
 ### Architecture
 - [Design Principles](docs/architecture/design-principles.md) - Core framework philosophy
 - [Framework Patterns](docs/architecture/patterns.md) - Reusable patterns
 - [System Constraints](docs/architecture/constraints.md) - What the framework can/cannot do
+
+### Development
+- [Developer Guide](docs/development/DEVELOPER_GUIDE.md) - Contributing to the framework
+- [Build System](docs/development/build-system.md) - Build and test processes
 
 ---
 

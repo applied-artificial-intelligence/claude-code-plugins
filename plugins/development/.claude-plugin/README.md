@@ -6,7 +6,7 @@
 
 ## Overview
 
-The Development Plugin provides comprehensive code development and quality assurance tools. It includes commands for analysis, testing, debugging, execution, review, and reporting, powered by specialized AI agents.
+The Development Plugin provides comprehensive code development and quality assurance tools. It includes commands for analysis, testing, debugging, documentation, version control, review, and reporting, powered by specialized AI agents.
 
 ## Commands
 
@@ -114,28 +114,66 @@ Universal debugging and fix application with semantic code analysis.
 
 ---
 
-### `/run [script|file]`
-Execute code or scripts with monitoring and timeout control.
+### `/docs [subcommand] [arguments]`
+Unified documentation hub - fetch, search, and generate.
 
-**Purpose**: Run scripts, execute code, monitor output
+**Purpose**: Manage all documentation needs in one place
+
+**Subcommands**:
+- `fetch [url|package]`: Fetch external documentation
+- `search [query]`: Search all documentation
+- `generate`: Generate project documentation
 
 **Usage**:
 ```bash
-/run tests                                   # Run test script
-/run src/migration.py                        # Execute Python file
-/run "npm run build"                         # Run npm script
+/docs fetch https://docs.example.com         # Fetch web docs
+/docs fetch react                            # Fetch library docs
+/docs search "API endpoints"                 # Search documentation
+/docs generate                               # Generate project docs
 ```
 
 **Features**:
-- Output monitoring with filtering
-- Timeout control (default 2 min, max 10 min)
-- Background execution support
-- Error detection and reporting
+- External documentation fetching with caching
+- Cross-documentation search
+- Auto-generated project documentation
+- MCP Context7 integration for library docs
 
-**Options**:
-- `--timeout SECONDS`: Set custom timeout
-- `--background`: Run in background
-- `--filter REGEX`: Filter output lines
+**MCP Enhancements**:
+- **Context7**: Fast library documentation lookup
+- **Firecrawl**: Web content extraction with caching
+
+---
+
+### `/git [operation] [arguments]`
+Unified git operations - commits, pull requests, and issue management.
+
+**Purpose**: All git workflows in one command
+
+**Operations**:
+- `commit [message]`: Create safe commits with validation
+- `pr [--draft]`: Create pull requests
+- `issue [#num|title]`: Work on GitHub issues
+
+**Usage**:
+```bash
+/git commit "feat: Add authentication"       # Conventional commit
+/git commit                                  # Interactive commit
+/git pr                                      # Create PR from branch
+/git pr --draft                              # Create draft PR
+/git issue "#123"                            # Start work on issue
+```
+
+**Features**:
+- Safe commits with pre-commit validation
+- Conventional commit messages
+- Comprehensive PR creation
+- GitHub issue integration via gh CLI
+
+**Quality Gates**:
+- Test execution (if available)
+- Linting checks (if configured)
+- Secret detection
+- Commit message validation
 
 ---
 
@@ -203,49 +241,6 @@ Generate professional stakeholder reports from data.
 - Actionable recommendations
 
 ---
-
-### `/experiment [config]`
-Run ML experiments with tracking.
-
-**Purpose**: Execute machine learning experiments with proper tracking and reproducibility
-
-**Usage**:
-```bash
-/experiment @experiment-config.yaml          # Run configured experiment
-/experiment "test transformer architecture"  # Ad-hoc experiment
-```
-
-**Features**:
-- Experiment configuration management
-- Hyperparameter tracking
-- Result logging and comparison
-- Reproducibility support
-
-**Agent**: `data-scientist` (ML specialist with structured reasoning)
-
-**MCP Enhancements**:
-- **Sequential Thinking**: Complex experiment design reasoning
-
----
-
-### `/evaluate [experiments]`
-Compare experiments and identify best performers.
-
-**Purpose**: Analyze experiment results, compare models, identify winners
-
-**Usage**:
-```bash
-/evaluate @experiment-results/                # Evaluate all results
-/evaluate exp-001 exp-002 exp-003            # Compare specific experiments
-```
-
-**Outputs**:
-- Performance comparison tables
-- Statistical significance analysis
-- Best model identification
-- Recommendation for deployment
-
-**Agent**: `data-scientist`
 
 ## Specialized Agents
 

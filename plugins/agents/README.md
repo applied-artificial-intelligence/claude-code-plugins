@@ -18,7 +18,6 @@ Invoke specialized agents for focused tasks:
 - Test creation and coverage analysis
 - Code quality and security review
 - Compliance and framework validation
-- Data science and ML experiments
 - Report generation
 
 **Usage**:
@@ -30,7 +29,6 @@ Invoke specialized agents for focused tasks:
 /agent test-engineer "Create test suite for payment processing"
 /agent code-reviewer "Review security of API endpoints"
 /agent auditor "Validate framework compliance"
-/agent data-scientist "Analyze experiment results"
 /agent report-generator "Generate stakeholder report"
 ```
 
@@ -39,7 +37,7 @@ Invoke specialized agents for focused tasks:
 - **test-engineer** - Test creation and coverage analysis
 - **code-reviewer** - Code quality and security review
 - **auditor** - Compliance and framework validation
-- **data-scientist** - ML experiments, data analysis, model evaluation
+- **reasoning-specialist** - Complex analysis and structured reasoning
 - **report-generator** - Professional stakeholder reports
 
 ### /serena
@@ -73,8 +71,7 @@ Activate Serena MCP for semantic code operations:
 
 ### Specialized Agents
 The `/agent` command provides unified interface to invoke:
-- Core agents (architect, test-engineer, code-reviewer, auditor)
-- Domain agents (data-scientist for ML workflows)
+- Core agents (architect, test-engineer, code-reviewer, auditor, reasoning-specialist)
 - Report agents (report-generator for stakeholder communications)
 
 ### Serena MCP
@@ -115,12 +112,6 @@ The `/serena` command activates semantic code understanding:
 # Returns compliance report with recommendations
 ```
 
-### ML Experiment Analysis
-```bash
-/agent data-scientist "Analyze experiment results and recommend best model"
-# Returns analysis with model comparison and recommendations
-```
-
 ### Semantic Code Operations
 ```bash
 /serena                          # Activate semantic understanding
@@ -151,7 +142,7 @@ The `/serena` command activates semantic code understanding:
 - Comprehensive test suite creation
 - Security-focused code review
 - Framework compliance validation
-- ML experiment analysis
+- Complex analysis requiring structured reasoning
 - Professional report generation
 
 ❌ **Don't use agents for**:

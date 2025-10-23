@@ -5,6 +5,50 @@ All notable changes to Claude Code Plugins will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-10-20
+
+### Removed
+
+#### Git Plugin
+- **Removed git plugin entirely** - Git operations now fully integrated into development plugin
+  - Removed deprecated `git/` plugin directory
+  - Removed git plugin from marketplace.json
+  - Updated all documentation to reflect git as part of development plugin
+  - No migration required - git functionality unchanged, just consolidated
+
+### Changed
+
+#### Plugin Schema
+- **Updated all plugin.json files** to match Claude Code official schema
+  - Changed `author` from string to object: `{"name": "..."}`
+  - Changed `repository` from object to URL string
+  - Added `./` prefix to all commands and agents paths
+  - Removed invalid fields (settings, capabilities, dependencies, mcpTools)
+  - Plugin names now match directory names for clean command names
+
+#### Marketplace
+- **Removed obsolete plugin references** from marketplace.json
+  - Removed "core" plugin (was renamed to "system" in v1.0.0)
+  - Marketplace now accurately lists only current plugins
+
+#### Documentation
+- **Updated README.md** to reflect 5 core plugins (was 6)
+  - Removed git plugin from plugin list
+  - Updated enabledPlugins examples
+  - Fixed documentation links to only reference existing files
+  - Removed references to non-existent guides
+
+- **Updated plugins/README.md** to reflect current plugin structure
+  - Updated from 6 to 5 plugins
+  - Moved git operations under development plugin
+  - Updated command counts
+
+### Fixed
+
+- **Command name prefixes** - Commands no longer show with plugin prefix (e.g., `/handoff` instead of `/claude-code-memory:handoff`)
+- **Duplicate marketplace** - Removed duplicate marketplace configuration causing conflicts
+- **Invalid JSON** - All plugin.json files now validate against Claude Code schema
+
 ## [1.1.0] - 2025-10-19
 
 ### Added

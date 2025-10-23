@@ -1,0 +1,45 @@
+{
+  "name": "aai-plugins",
+  "owner": {
+    "name": "Applied Artificial Intelligence"
+  },
+  "description": "Production-ready workflow framework for Claude Code - structured development patterns, work management, and quality automation",
+  "homepage": "https://github.com/applied-artificial-intelligence/claude-code-plugins",
+  "plugins": [
+    {
+      "name": "system",
+      "source": "./system",
+      "description": "System configuration and health management",
+      "version": "1.0.0",
+      "keywords": ["system", "configuration", "health", "audit", "setup"]
+    },
+    {
+      "name": "workflow",
+      "source": "./workflow",
+      "description": "Structured development workflow - explore, plan, implement, deliver",
+      "version": "1.0.0",
+      "keywords": ["workflow", "explore", "plan", "next", "ship"]
+    },
+    {
+      "name": "development",
+      "source": "./development",
+      "description": "Code development and quality assurance tools - analyze, test, fix, review",
+      "version": "1.0.0",
+      "keywords": ["development", "testing", "quality", "analysis", "debugging", "git"]
+    },
+    {
+      "name": "memory",
+      "source": "./memory",
+      "description": "Active memory management and maintenance for Claude Code framework",
+      "version": "1.0.0",
+      "keywords": ["memory", "maintenance", "context", "management", "handoff"]
+    },
+    {
+      "name": "agents",
+      "source": "./agents",
+      "description": "Specialized agent invocation and management",
+      "version": "1.0.0",
+      "keywords": ["agents", "specialists", "delegation"]
+    }
+  ]
+}

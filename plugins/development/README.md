@@ -136,38 +136,6 @@ Universal debugging and fix application with semantic code analysis. Debug error
 - ✅ Resolving linter issues
 - ✅ Quick fixes with confidence
 
-### `/run [script or file to run]`
-Execute code or scripts with monitoring and timeout control. Safe execution with output capture.
-
-**What it does**:
-- Runs scripts, tests, builds, or any executable code
-- Monitors execution with timeout protection
-- Captures stdout/stderr output
-- Reports execution status and errors
-- Provides execution metrics
-
-**Usage**:
-```bash
-/run npm test                               # Run npm tests
-/run python scripts/migrate.py              # Run Python script
-/run make build                             # Run make command
-/run --timeout 300 npm run long-task        # Custom timeout (5 min)
-```
-
-**Features**:
-- **Timeout Protection**: Prevents hanging processes (default: 2 min, max: 10 min)
-- **Output Capture**: Full stdout/stderr capture with formatting
-- **Error Handling**: Clear error reporting with exit codes
-- **Background Mode**: Run long tasks in background
-- **Output Monitoring**: Check output of background tasks
-
-**When to use**:
-- ✅ Running tests before commit
-- ✅ Executing build scripts
-- ✅ Database migrations
-- ✅ Code generation scripts
-- ✅ Any CLI tool or script
-
 ### `/review [file/directory] [--spec requirements.md] [--systematic] [--semantic]`
 Standard code review focused on bugs, design flaws, dead code, and code quality with prioritized action plan.
 
@@ -385,12 +353,12 @@ Code review, documentation quality, and security audit specialist.
 # (test-engineer helps generate test cases)
 
 # 3. Run test (should fail)
-/run npm test
+npm test
 
 # 4. Implement feature
 
 # 5. Run test (should pass)
-/run npm test
+npm test
 
 # 6. Refactor
 
@@ -481,7 +449,7 @@ View with:
 # Implement feature to pass tests
 
 # Run tests
-/run npm test
+npm test
 
 # Review implementation
 /review src/new-feature
@@ -505,7 +473,7 @@ View with:
 /fix review
 
 # Run tests
-/run npm test
+npm test
 
 # Verify fix
 /test src/buggy-module

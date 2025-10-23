@@ -1,37 +1,20 @@
 {
-  "name": "claude-code-agents",
+  "name": "agents",
   "version": "1.0.0",
   "description": "Specialized agent invocation and semantic code understanding",
-  "author": "Claude Code Framework",
-  "keywords": ["agents", "invocation", "serena", "semantic", "orchestration"],
-  "commands": ["commands/*.md"],
-  "settings": {
-    "defaultEnabled": true,
-    "category": "agents"
+  "author": {
+    "name": "Claude Code Framework"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/applied-artificial-intelligence/claude-code-plugins"
-  },
-  "license": "MIT",
-  "capabilities": {
-    "agentInvocation": {
-      "description": "Direct invocation of specialized agents with explicit context",
-      "command": "agent"
-    },
-    "semanticUnderstanding": {
-      "description": "Activate semantic code understanding for projects",
-      "command": "serena"
-    }
-  },
-  "mcpTools": {
-    "optional": ["serena"],
-    "gracefulDegradation": true
-  },
-  "integrations": {
-    "serena": {
-      "description": "Serena MCP integration for semantic code operations",
-      "capabilities": ["find_symbol", "replace_symbol_body", "activate_project", "get_symbols_overview"]
-    }
-  }
+  "keywords": [
+    "agents",
+    "invocation",
+    "serena",
+    "semantic",
+    "orchestration"
+  ],
+  "commands": [
+    "./commands/*.md"
+  ],
+  "repository": "https://github.com/applied-artificial-intelligence/claude-code-plugins",
+  "license": "MIT"
 }

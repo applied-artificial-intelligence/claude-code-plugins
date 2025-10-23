@@ -10,10 +10,9 @@ Automatically loads and continues from the most recent handoff document, with ve
 ## Purpose
 
 This command automates the continuation workflow after `/clear` by:
-1. Finding the latest handoff via symlink
-2. Verifying it points to the actual most recent handoff
-3. Reading and loading context
-4. Briefing you on what we're continuing from
+1. Finding the most recent handoff via dynamic lookup (no symlink needed)
+2. Reading and loading context
+3. Briefing you on what we're continuing from
 
 ## Usage
 
@@ -27,17 +26,25 @@ This command automates the continuation workflow after `/clear` by:
 ## What It Does
 
 ### Step 1: Locate Latest Handoff
-Checks `.claude/transitions/latest/handoff.md` symlink.
+Dynamically finds the most recent transition using:
 
-### Step 2: Verify Recency
-Confirms the symlink points to the actual newest handoff (not stale).
+```bash
+# Find most recent date directory
+LATEST_DATE=$(ls -1 .claude/transitions/ | grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' | sort -r | head -1)
 
-### Step 3: Load Context
+# Find most recent timestamp in that directory
+LATEST_TIME=$(ls -1 ".claude/transitions/$LATEST_DATE/" | grep -E '^[0-9]{6}\.md$' | sort -r | head -1)
+
+# Full path to most recent transition
+LATEST_TRANSITION=".claude/transitions/$LATEST_DATE/$LATEST_TIME"
+```
+
+### Step 2: Load Context
 Reads the handoff document and extracts key information.
 
-### Step 4: Brief You
+### Step 3: Brief You
 Tells you:
-- Which handoff file is being loaded
+- Which handoff file is being loaded (date + UTC timestamp)
 - Session focus from that handoff
 - Active work status
 - Main next steps
@@ -45,17 +52,18 @@ Tells you:
 ## Example Output
 
 ```
-📋 Continuing from: .claude/transitions/2025-10-18_005/handoff.md
+📋 Continuing from: .claude/transitions/2025-10-20/124933.md
+   Handoff created: 2025-10-20 12:49:33 UTC
 
-Session Focus: Plugin v1.0.0 delivery + web development plugin fix
-Active Work: Completed work unit 009, shipped v1.0.0
-Next Steps: Applied AI website work
+Session Focus: Handoff Command Refactoring - UTC Timestamp-based Organization
+Active Work: Moved from numbered transitions to UTC timestamp structure
+Next Steps: Complete handoff command updates, test new approach
 
 Main Takeaways:
-- Plugin architecture refactored to 6 focused plugins
-- Web development plugin fixed and ready
-- CRITICAL: Context perception error discovered (Claude sees ~66% but actual 103%)
-- Custom slash commands broken (bug #8499) - use direct instructions
+- Removed numbered format (2025-10-19_006) in favor of UTC timestamps
+- No more counter management or symlink complexity
+- Dynamic lookup using two simple ls commands
+- PWD verification added to prevent wrong-directory creation
 
 Ready to continue. What would you like to work on?
 ```
@@ -63,9 +71,9 @@ Ready to continue. What would you like to work on?
 ## Error Handling
 
 If issues detected:
-- **Symlink missing**: Creates it pointing to newest handoff
-- **Stale symlink**: Updates to point to newest handoff
-- **No handoffs found**: Alerts you to create first handoff
+- **No date directories found**: Alerts you to create first handoff with `/handoff`
+- **No transitions in latest date**: Indicates corruption or incomplete handoff
+- **Wrong directory**: Verifies `.claude/transitions/` exists before proceeding
 
 ## Why This Exists
 

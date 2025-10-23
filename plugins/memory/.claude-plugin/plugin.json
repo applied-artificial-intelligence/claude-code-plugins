@@ -1,56 +1,23 @@
 {
-  "name": "claude-code-memory",
+  "name": "memory",
   "version": "1.1.0",
   "description": "Active memory management and maintenance for Claude Code framework",
-  "author": "Claude Code Framework",
-  "keywords": ["memory", "maintenance", "context", "management", "index", "handoff", "continue", "performance"],
-  "commands": ["commands/*.md"],
-  "settings": {
-    "defaultEnabled": true,
-    "category": "core"
+  "author": {
+    "name": "Claude Code Framework"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/applied-artificial-intelligence/claude-code-plugins"
-  },
-  "license": "MIT",
-  "capabilities": {
-    "memoryReview": {
-      "description": "Display current memory state with timestamps and sizes",
-      "command": "memory-review"
-    },
-    "memoryUpdate": {
-      "description": "Interactive memory maintenance with add/update/remove/relocate operations",
-      "command": "memory-update"
-    },
-    "memoryGarbageCollection": {
-      "description": "Identify and clean up stale memory entries",
-      "command": "memory-gc"
-    },
-    "autoReflection": {
-      "description": "Auto-analyze work for memory updates at completion points",
-      "integrated": "ship, fix, review commands"
-    },
-    "projectIndexing": {
-      "description": "Create and maintain persistent project understanding through comprehensive mapping",
-      "command": "index"
-    },
-    "sessionHandoff": {
-      "description": "Create transition documents with context analysis for session continuity",
-      "command": "handoff"
-    },
-    "sessionContinue": {
-      "description": "Auto-load and resume from latest handoff document with verification",
-      "command": "continue"
-    },
-    "performanceMetrics": {
-      "description": "View token usage and performance metrics across all components",
-      "command": "performance"
-    }
-  },
-  "dependencies": {},
-  "mcpTools": {
-    "optional": ["sequential-thinking"],
-    "gracefulDegradation": true
-  }
+  "keywords": [
+    "memory",
+    "maintenance",
+    "context",
+    "management",
+    "index",
+    "handoff",
+    "continue",
+    "performance"
+  ],
+  "commands": [
+    "./commands/*.md"
+  ],
+  "repository": "https://github.com/applied-artificial-intelligence/claude-code-plugins",
+  "license": "MIT"
 }
