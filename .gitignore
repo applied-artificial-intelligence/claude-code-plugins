@@ -77,5 +77,6 @@ private/
 secrets/
 *.key
 *.pem
-.notebooklm-sources
-.repomix-packages
+
+# Archived development artifacts
+.archive/
