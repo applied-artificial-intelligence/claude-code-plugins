@@ -285,6 +285,50 @@ The framework follows an `explore` → `plan` → `next` → `ship` pattern:
 
 ---
 
+## Screenshots
+
+### Context Management: /handoff → /continue
+
+Managing context across sessions to prevent quality degradation:
+
+![Handoff and Continue Workflow](screenshots/01_handoff_continue.png)
+
+**Key features shown**:
+- Context analysis at 70% perceived usage (~85% actual)
+- Active work state preservation
+- Recent decisions and outstanding items
+- Clean continuation after `/clear`
+
+---
+
+### Complete Workflow: /explore → /plan → /next
+
+Systematic task execution from requirements to implementation:
+
+![Workflow Sequence](screenshots/02_workflow_sequence.png)
+
+**Key features shown**:
+- Requirements analysis with `/explore`
+- Task breakdown with `/plan`
+- Incremental execution with `/next`
+- Progress tracking and state management
+
+---
+
+### Code Analysis: /analyze and /review
+
+Deep codebase understanding and quality checks:
+
+![Code Analysis and Review](screenshots/03_analyze_review.png)
+
+**Key features shown**:
+- Structural analysis with pattern identification
+- Test coverage metrics
+- Code quality review with actionable recommendations
+- Security and performance assessment
+
+---
+
 ## Technical Details
 
 ### State Management
